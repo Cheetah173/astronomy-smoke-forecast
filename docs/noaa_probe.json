@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-09T22:22:34.245356Z",
+  "generated_utc": "2026-10-09T22:28:45.134630Z",
   "model": "NOAA NCEP HRRR CONUS",
   "cycle_utc": "2026-10-09T18:00:00Z",
   "forecast_hour": 7,
@@ -11,9 +11,206 @@
     "top": 33,
     "bottom": 30
   },
-  "column_status": "unavailable \u2014 smoke species not uniquely verified",
-  "hrrr_aod_status": "unavailable \u2014 no unique AOTK field",
+  "column_status": "available: NOAA HRRR vertically integrated smoke (documented product)",
+  "hrrr_aod_status": "available: NOAA HRRR AOTK (wavelength unverified)",
   "smoke_1000ft_agl_status": "not yet connected",
   "smoke_6000ft_agl_status": "not yet connected",
-  "candidate_fields": []
+  "candidate_fields": [
+    {
+      "metadata": {
+        "paramId": 0,
+        "discipline": 0,
+        "parameterCategory": 20,
+        "parameterNumber": 102,
+        "productDefinitionTemplateNumber": 0,
+        "typeOfFirstFixedSurface": "200",
+        "typeOfSecondFixedSurface": 255,
+        "forecastTime": 7,
+        "stepUnits": 1,
+        "centre": "kwbc",
+        "dataDate": 20261009,
+        "dataTime": 1800,
+        "shortName": "AOTK",
+        "units": "dimensionless",
+        "identification_method": "WMO GRIB2 discipline/category/parameterNumber"
+      },
+      "smoke_species_encoded_in_message": false,
+      "site_raw_value": 0.0238
+    },
+    {
+      "metadata": {
+        "paramId": 0,
+        "discipline": 0,
+        "parameterCategory": 20,
+        "parameterNumber": 1,
+        "productDefinitionTemplateNumber": 0,
+        "typeOfFirstFixedSurface": "200",
+        "typeOfSecondFixedSurface": 255,
+        "forecastTime": 7,
+        "stepUnits": 1,
+        "centre": "kwbc",
+        "dataDate": 20261009,
+        "dataTime": 1800,
+        "shortName": "COLMD",
+        "units": "kg/m^2",
+        "identification_method": "WMO GRIB2 discipline/category/parameterNumber"
+      },
+      "smoke_species_encoded_in_message": false,
+      "site_raw_value": 5.320000000000001e-06
+    }
+  ],
+  "provenance": {
+    "grib_code_table": "https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-20.shtml",
+    "hrrr_smoke_documentation": "https://www.weather.gov/media/notification/pdf2/scn20-46rap_v5_hrrr_v4_aab.pdf",
+    "note": "NOAA NWS explicitly documents the HRRR COLMD product as column-integrated smoke. This GRIB message may encode the physical parameter but no independent aerosol-species tag. Interpret only in the context of the NOAA HRRR CONUS wrfsfc COLMD product, not arbitrary COLMD fields."
+  },
+  "column_identification_provenance": "NOAA HRRR CONUS smoke product documentation (no species identifier in GRIB metadata)",
+  "column_mg_m2": [
+    {
+      "label": "NW",
+      "latitude": 32.45,
+      "longitude": -98.34,
+      "grid_latitude": 32.4618,
+      "grid_longitude": -98.3324,
+      "smoke_column_mg_m2": 5.98
+    },
+    {
+      "label": "N",
+      "latitude": 32.45,
+      "longitude": -97.14,
+      "grid_latitude": 32.4376,
+      "grid_longitude": -97.1558,
+      "smoke_column_mg_m2": 6.05
+    },
+    {
+      "label": "NE",
+      "latitude": 32.45,
+      "longitude": -95.94,
+      "grid_latitude": 32.4539,
+      "grid_longitude": -95.9473,
+      "smoke_column_mg_m2": 5.38
+    },
+    {
+      "label": "W",
+      "latitude": 31.45,
+      "longitude": -98.34,
+      "grid_latitude": 31.4429,
+      "grid_longitude": -98.353,
+      "smoke_column_mg_m2": 4.06
+    },
+    {
+      "label": "SITE",
+      "latitude": 31.45,
+      "longitude": -97.14,
+      "grid_latitude": 31.4457,
+      "grid_longitude": -97.1288,
+      "smoke_column_mg_m2": 5.32
+    },
+    {
+      "label": "E",
+      "latitude": 31.45,
+      "longitude": -95.94,
+      "grid_latitude": 31.4617,
+      "grid_longitude": -95.9355,
+      "smoke_column_mg_m2": 25.16
+    },
+    {
+      "label": "SW",
+      "latitude": 30.45,
+      "longitude": -98.34,
+      "grid_latitude": 30.4531,
+      "grid_longitude": -98.3424,
+      "smoke_column_mg_m2": 7.1
+    },
+    {
+      "label": "S",
+      "latitude": 30.45,
+      "longitude": -97.14,
+      "grid_latitude": 30.4558,
+      "grid_longitude": -97.1334,
+      "smoke_column_mg_m2": 5.67
+    },
+    {
+      "label": "SE",
+      "latitude": 30.45,
+      "longitude": -95.94,
+      "grid_latitude": 30.4453,
+      "grid_longitude": -95.9555,
+      "smoke_column_mg_m2": 8.72
+    }
+  ],
+  "hrrr_aod": [
+    {
+      "label": "NW",
+      "latitude": 32.45,
+      "longitude": -98.34,
+      "grid_latitude": 32.4618,
+      "grid_longitude": -98.3324,
+      "aod": 0.0267
+    },
+    {
+      "label": "N",
+      "latitude": 32.45,
+      "longitude": -97.14,
+      "grid_latitude": 32.4376,
+      "grid_longitude": -97.1558,
+      "aod": 0.0271
+    },
+    {
+      "label": "NE",
+      "latitude": 32.45,
+      "longitude": -95.94,
+      "grid_latitude": 32.4539,
+      "grid_longitude": -95.9473,
+      "aod": 0.0241
+    },
+    {
+      "label": "W",
+      "latitude": 31.45,
+      "longitude": -98.34,
+      "grid_latitude": 31.4429,
+      "grid_longitude": -98.353,
+      "aod": 0.018
+    },
+    {
+      "label": "SITE",
+      "latitude": 31.45,
+      "longitude": -97.14,
+      "grid_latitude": 31.4457,
+      "grid_longitude": -97.1288,
+      "aod": 0.0238
+    },
+    {
+      "label": "E",
+      "latitude": 31.45,
+      "longitude": -95.94,
+      "grid_latitude": 31.4617,
+      "grid_longitude": -95.9355,
+      "aod": 0.1129
+    },
+    {
+      "label": "SW",
+      "latitude": 30.45,
+      "longitude": -98.34,
+      "grid_latitude": 30.4531,
+      "grid_longitude": -98.3424,
+      "aod": 0.0316
+    },
+    {
+      "label": "S",
+      "latitude": 30.45,
+      "longitude": -97.14,
+      "grid_latitude": 30.4558,
+      "grid_longitude": -97.1334,
+      "aod": 0.0254
+    },
+    {
+      "label": "SE",
+      "latitude": 30.45,
+      "longitude": -95.94,
+      "grid_latitude": 30.4453,
+      "grid_longitude": -95.9555,
+      "aod": 0.0391
+    }
+  ]
 }
