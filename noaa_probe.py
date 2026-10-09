@@ -8,6 +8,7 @@ Future stage: multiple forecast hours and 1000/6000 ft AGL native-level fields.
 from __future__ import annotations
 
 import io
+import tempfile
 import json
 import math
 import sys
@@ -115,7 +116,9 @@ def decode(data: bytes) -> dict:
     if not data.startswith(b'GRIB'):
         raise ValueError('NOMADS returned HTML/other content, not GRIB2')
     found = []
-    with io.BytesIO(data) as source:
+    with tempfile.TemporaryFile(mode="w+b") as source:
+        source.write(data)
+        source.seek(0):
         while True:
             gid = codes_grib_new_from_file(source)
             if gid is None:
