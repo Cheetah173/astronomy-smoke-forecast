@@ -7,7 +7,6 @@ Future stage: multiple forecast hours and 1000/6000 ft AGL native-level fields.
 """
 from __future__ import annotations
 
-import io
 import tempfile
 import json
 import math
@@ -66,6 +65,8 @@ def field_metadata(gid: int) -> dict:
         'parameterCategory', 'parameterNumber', 'productDefinitionTemplateNumber',
         'typeOfAerosol', 'aerosolType', 'typeOfChemicalConstituent',
         'aerosolTypeDescription', 'typeOfSizeInterval',
+        'typeOfFirstFixedSurface', 'typeOfSecondFixedSurface',
+        'forecastTime', 'stepUnits', 'centre', 'dataDate', 'dataTime',
     )
     return {k: v for k in keys if (v := get_or_none(gid, k)) is not None}
 
@@ -88,6 +89,22 @@ def candidate_smoke(meta: dict) -> bool:
             'wildfire smoke' in identity or
             'smoke - high absorption' in identity or
             'smoke - low absorption' in identity)
+
+
+def grib_field_kind(meta: dict) -> str | None:
+    """Identify fields by WMO GRIB2 codes even when ecCodes lacks shortName.
+
+    NOAA/NCEP Table 4.2-0-20: (discipline=0, category=20)
+      parameter 102 = AOTK (aerosol optical thickness; dimensionless)
+      parameter   1 = COLMD (column-integrated mass density; kg/m^2)
+    https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-20.shtml
+    """
+    try:
+        code = tuple(int(meta[k]) for k in
+                     ('discipline', 'parameterCategory', 'parameterNumber'))
+    except (KeyError, ValueError, TypeError):
+        return None
+    return {(0, 20, 102): 'AOTK', (0, 20, 1): 'COLMD'}.get(code)
 
 
 def nearby(gid: int) -> list[dict]:
@@ -116,7 +133,7 @@ def decode(data: bytes) -> dict:
     if not data.startswith(b'GRIB'):
         raise ValueError('NOMADS returned HTML/other content, not GRIB2')
     found = []
-    with tempfile.TemporaryFile(mode="w+b") as source:
+    with tempfile.TemporaryFile(mode='w+b') as source:
         source.write(data)
         source.seek(0)
         while True:
@@ -125,38 +142,57 @@ def decode(data: bytes) -> dict:
                 break
             try:
                 meta = field_metadata(gid)
-                print("DECODED GRIB FIELD:", json.dumps(meta, default=str))
-                if str(meta.get('shortName', '')).upper() not in ('AOTK', 'COLMD'):
+                kind = grib_field_kind(meta)
+                print('DECODED GRIB FIELD:', json.dumps(meta, default=str))
+                if kind is None:
                     continue
+                # WMO code numbers are authoritative when ecCodes lacks an alias.
+                meta['shortName'] = kind
+                meta['units'] = 'kg/m^2' if kind == 'COLMD' else 'dimensionless'
+                meta['identification_method'] = 'WMO GRIB2 discipline/category/parameterNumber'
                 item = {'metadata': meta, 'nearest': nearby(gid)}
-                item['smoke_identified'] = candidate_smoke(meta)
+                item['smoke_species_encoded_in_message'] = candidate_smoke(meta)
                 found.append(item)
             finally:
                 codes_release(gid)
-    columns = [f for f in found if str(f['metadata'].get('shortName', '')).upper() == 'COLMD']
-    aods = [f for f in found if str(f['metadata'].get('shortName', '')).upper() == 'AOTK']
-    smoke = [f for f in columns if f['smoke_identified']]
+    columns = [f for f in found if f['metadata']['shortName'] == 'COLMD']
+    aods = [f for f in found if f['metadata']['shortName'] == 'AOTK']
     result = {
         'candidate_fields': [{
             'metadata': f['metadata'],
-            'smoke_identified': f['smoke_identified'],
+            'smoke_species_encoded_in_message': f['smoke_species_encoded_in_message'],
             'site_raw_value': next(p['raw_value'] for p in f['nearest'] if p['label'] == 'SITE'),
         } for f in found],
-        'column_status': 'unavailable — smoke species not uniquely verified',
-        'hrrr_aod_status': 'unavailable — no unique AOTK field',
+        'column_status': 'unavailable — expected one HRRR COLMD record',
+        'hrrr_aod_status': 'unavailable — expected one HRRR AOTK record',
+        'provenance': {
+            'grib_code_table': 'https://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table4-2-0-20.shtml',
+            'hrrr_smoke_documentation': 'https://www.weather.gov/media/notification/pdf2/scn20-46rap_v5_hrrr_v4_aab.pdf',
+            'note': 'NOAA NWS explicitly documents the HRRR COLMD product as column-integrated smoke. This GRIB message may encode the physical parameter but no independent aerosol-species tag. Interpret only in the context of the NOAA HRRR CONUS wrfsfc COLMD product, not arbitrary COLMD fields.'
+        },
     }
-    if len(smoke) == 1 and smoke[0]['metadata'].get('units') in ('kg m**-2', 'kg m-2', 'kg/m^2', 'kg m^-2'):
-        result['column_status'] = 'available: NOAA HRRR COLMD verified smoke species'
+    if len(columns) == 1:
+        col = columns[0]
+        if col['smoke_species_encoded_in_message']:
+            provenance = 'GRIB species metadata and NOAA HRRR documentation'
+        else:
+            provenance = 'NOAA HRRR CONUS smoke product documentation (no species identifier in GRIB metadata)'
+        result['column_status'] = 'available: NOAA HRRR vertically integrated smoke (documented product)'
+        result['column_identification_provenance'] = provenance
         result['column_mg_m2'] = [
-            {k: (round(p['raw_value'] * 1e6, 3) if k == 'raw_value' else v)
-             for k, v in p.items()}
-            for p in smoke[0]['nearest']
+            {**{k: v for k, v in p.items() if k != 'raw_value'},
+             'smoke_column_mg_m2': round(p['raw_value'] * 1e6, 3)}
+            for p in col['nearest']
         ]
-    elif len(columns) == 1 and len(smoke) == 0:
-        result['column_status'] = 'unavailable — one COLMD found, aerosol identity unspecified; inspect metadata'
     if len(aods) == 1:
-        result['hrrr_aod_status'] = 'available: NOAA HRRR AOTK (check wavelength and metadata)'
-        result['hrrr_aod'] = aods[0]['nearest']
+        result['hrrr_aod_status'] = 'available: NOAA HRRR AOTK (wavelength unverified)'
+        result['hrrr_aod'] = [
+            {**{k: v for k, v in p.items() if k != 'raw_value'},
+             'aod': round(p['raw_value'], 5)}
+            for p in aods[0]['nearest']
+        ]
+    elif len(aods) > 1:
+        result['hrrr_aod_status'] = 'unavailable — more than one AOTK record; need wavelength distinction' 
     return result
 
 
@@ -193,7 +229,12 @@ def run() -> dict:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print('NOAA probe result:', report['column_status'])
+    print('NOAA AOD result:', report['hrrr_aod_status'])
     print('Candidate metadata:', json.dumps(report.get('candidate_fields', []), indent=2)[:4500])
+    if 'column_mg_m2' in report:
+        print('SITE SMOKE COLUMN mg/m2:', next(x['smoke_column_mg_m2'] for x in report['column_mg_m2'] if x['label'] == 'SITE'))
+    if 'hrrr_aod' in report:
+        print('SITE HRRR AOD:', next(x['aod'] for x in report['hrrr_aod'] if x['label'] == 'SITE'))
     print('Saved', OUTPUT)
     return report
 
