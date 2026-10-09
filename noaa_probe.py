@@ -125,6 +125,7 @@ def decode(data: bytes) -> dict:
                 break
             try:
                 meta = field_metadata(gid)
+                print("DECODED GRIB FIELD:", json.dumps(meta, default=str))
                 if str(meta.get('shortName', '')).upper() not in ('AOTK', 'COLMD'):
                     continue
                 item = {'metadata': meta, 'nearest': nearby(gid)}
