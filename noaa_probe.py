@@ -118,7 +118,7 @@ def decode(data: bytes) -> dict:
     found = []
     with tempfile.TemporaryFile(mode="w+b") as source:
         source.write(data)
-        source.seek(0):
+        source.seek(0)
         while True:
             gid = codes_grib_new_from_file(source)
             if gid is None:
