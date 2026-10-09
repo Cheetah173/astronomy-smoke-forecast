@@ -42,6 +42,10 @@ jobs:
       - name: Probe NOAA column smoke
         continue-on-error: true
         run: python noaa_probe.py
+        
+      - name: Extract NOAA smoke time series
+        continue-on-error: true
+        run: python noaa_timeseries.py
 
       - name: Commit updated JSON
         run: |
