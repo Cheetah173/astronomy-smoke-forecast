@@ -39,7 +39,7 @@ def target_hours(now: datetime) -> list[datetime]:
     day = local.date() - timedelta(days=1 if local.hour < 6 else 0)
     base = datetime(day.year, day.month, day.day, 20, tzinfo=LOCAL)
     return [(base + timedelta(hours=offset)).astimezone(UTC)
-            for offset in (0, 5, 8)]  # 8 PM, 1 AM, 4 AM CDT/CST
+        for offset in range(9)]
 
 
 def field_matches_cycle(candidate_fields: list[dict], cycle: datetime, fxx: int) -> bool:
