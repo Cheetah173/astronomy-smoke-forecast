@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-13T13:38:39.610370Z",
+  "generated_utc": "2026-10-13T18:15:23.351688Z",
   "model": "NOAA NCEP HRRR CONUS",
-  "cycle_utc": "2026-10-13T06:00:00Z",
-  "forecast_hour": 10,
-  "valid_utc": "2026-10-13T16:00:00Z",
+  "cycle_utc": "2026-10-13T12:00:00Z",
+  "forecast_hour": 9,
+  "valid_utc": "2026-10-13T21:00:00Z",
   "source": "https://nomads.ncep.noaa.gov/cgi-bin/filter_hrrr_2d.pl",
   "bbox": {
     "left": -99,
@@ -25,17 +25,17 @@
         "productDefinitionTemplateNumber": 0,
         "typeOfFirstFixedSurface": "200",
         "typeOfSecondFixedSurface": 255,
-        "forecastTime": 10,
+        "forecastTime": 9,
         "stepUnits": 1,
         "centre": "kwbc",
         "dataDate": 20261013,
-        "dataTime": 600,
+        "dataTime": 1200,
         "shortName": "AOTK",
         "units": "dimensionless",
         "identification_method": "WMO GRIB2 discipline/category/parameterNumber"
       },
       "smoke_species_encoded_in_message": false,
-      "site_raw_value": 0.00013000000000000002
+      "site_raw_value": 0.0001
     },
     {
       "metadata": {
@@ -46,17 +46,17 @@
         "productDefinitionTemplateNumber": 0,
         "typeOfFirstFixedSurface": "200",
         "typeOfSecondFixedSurface": 255,
-        "forecastTime": 10,
+        "forecastTime": 9,
         "stepUnits": 1,
         "centre": "kwbc",
         "dataDate": 20261013,
-        "dataTime": 600,
+        "dataTime": 1200,
         "shortName": "COLMD",
         "units": "kg/m^2",
         "identification_method": "WMO GRIB2 discipline/category/parameterNumber"
       },
       "smoke_species_encoded_in_message": false,
-      "site_raw_value": 3.000000000000001e-08
+      "site_raw_value": 3.0000000000000004e-08
     }
   ],
   "provenance": {
@@ -72,7 +72,7 @@
       "longitude": -98.34,
       "grid_latitude": 32.4618,
       "grid_longitude": -98.3324,
-      "smoke_column_mg_m2": 0.032
+      "smoke_column_mg_m2": 0.03
     },
     {
       "label": "N",
@@ -80,7 +80,7 @@
       "longitude": -97.14,
       "grid_latitude": 32.4376,
       "grid_longitude": -97.1558,
-      "smoke_column_mg_m2": 0.038
+      "smoke_column_mg_m2": 0.02
     },
     {
       "label": "NE",
@@ -88,7 +88,7 @@
       "longitude": -95.94,
       "grid_latitude": 32.4539,
       "grid_longitude": -95.9473,
-      "smoke_column_mg_m2": 0.054
+      "smoke_column_mg_m2": 0.06
     },
     {
       "label": "W",
@@ -96,7 +96,7 @@
       "longitude": -98.34,
       "grid_latitude": 31.4429,
       "grid_longitude": -98.353,
-      "smoke_column_mg_m2": 0.017
+      "smoke_column_mg_m2": 0.01
     },
     {
       "label": "SITE",
@@ -112,7 +112,7 @@
       "longitude": -95.94,
       "grid_latitude": 31.4617,
       "grid_longitude": -95.9355,
-      "smoke_column_mg_m2": 0.044
+      "smoke_column_mg_m2": 0.05
     },
     {
       "label": "SW",
@@ -120,7 +120,7 @@
       "longitude": -98.34,
       "grid_latitude": 30.4531,
       "grid_longitude": -98.3424,
-      "smoke_column_mg_m2": 0.016
+      "smoke_column_mg_m2": 0.02
     },
     {
       "label": "S",
@@ -128,7 +128,7 @@
       "longitude": -97.14,
       "grid_latitude": 30.4558,
       "grid_longitude": -97.1334,
-      "smoke_column_mg_m2": 0.027
+      "smoke_column_mg_m2": 0.05
     },
     {
       "label": "SE",
@@ -136,7 +136,7 @@
       "longitude": -95.94,
       "grid_latitude": 30.4453,
       "grid_longitude": -95.9555,
-      "smoke_column_mg_m2": 0.05
+      "smoke_column_mg_m2": 0.08
     }
   ],
   "hrrr_aod": [
@@ -146,7 +146,7 @@
       "longitude": -98.34,
       "grid_latitude": 32.4618,
       "grid_longitude": -98.3324,
-      "aod": 0.00014
+      "aod": 0.0001
     },
     {
       "label": "N",
@@ -154,7 +154,7 @@
       "longitude": -97.14,
       "grid_latitude": 32.4376,
       "grid_longitude": -97.1558,
-      "aod": 0.00017
+      "aod": 0.0001
     },
     {
       "label": "NE",
@@ -162,7 +162,7 @@
       "longitude": -95.94,
       "grid_latitude": 32.4539,
       "grid_longitude": -95.9473,
-      "aod": 0.00024
+      "aod": 0.0003
     },
     {
       "label": "W",
@@ -170,7 +170,7 @@
       "longitude": -98.34,
       "grid_latitude": 31.4429,
       "grid_longitude": -98.353,
-      "aod": 7e-05
+      "aod": 0.0001
     },
     {
       "label": "SITE",
@@ -178,7 +178,7 @@
       "longitude": -97.14,
       "grid_latitude": 31.4457,
       "grid_longitude": -97.1288,
-      "aod": 0.00013
+      "aod": 0.0001
     },
     {
       "label": "E",
@@ -194,7 +194,7 @@
       "longitude": -98.34,
       "grid_latitude": 30.4531,
       "grid_longitude": -98.3424,
-      "aod": 7e-05
+      "aod": 0.0001
     },
     {
       "label": "S",
@@ -202,7 +202,7 @@
       "longitude": -97.14,
       "grid_latitude": 30.4558,
       "grid_longitude": -97.1334,
-      "aod": 0.00012
+      "aod": 0.0002
     },
     {
       "label": "SE",
@@ -210,7 +210,7 @@
       "longitude": -95.94,
       "grid_latitude": 30.4453,
       "grid_longitude": -95.9555,
-      "aod": 0.00022
+      "aod": 0.0003
     }
   ]
 }
