@@ -8,6 +8,7 @@ Does not modify the existing hourly smoke-column or Open-Meteo products.
 """
 from __future__ import annotations
 
+import time
 import json
 import math
 import re
@@ -103,8 +104,10 @@ def extract():
         length = end - start + 1
         if not 0 < length <= MAX_MESSAGE:
             raise ValueError(f"Unexpected GRIB message length {length} for {key}")
+        started = time.monotonic()
         response = session.get(file_url, headers={"Range": f"bytes={start}-{end}"}, timeout=90)
         response.raise_for_status()
+               download_seconds = time.monotonic() - started
         if response.status_code != 206 or len(response.content) != length or not response.content.startswith(b"GRIB"):
             raise ValueError(f"HTTP partial content failed for {key}: status={response.status_code}, bytes={len(response.content)}, wanted={length}")
         with tempfile.TemporaryFile(mode="w+b") as tmp:
@@ -131,6 +134,14 @@ def extract():
         cache[key] = values
         stats["downloaded_messages"] += 1
         stats["bytes"] += length
+        
+        print(
+            f"{e['name']} level {e['level']}: "
+            f"download={download_seconds:.1f}s, "
+            f"total={time.monotonic()-started:.1f}s",
+            flush=True
+        )
+
         return values
 
     try:
