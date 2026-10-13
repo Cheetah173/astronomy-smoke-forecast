@@ -41,7 +41,7 @@ jobs:
 
       - name: Probe NOAA column smoke
         continue-on-error: true
-        run: python noaa_probe.py
+        run: python noaa_vertical_timeseries.py
         
       - name: Extract NOAA smoke time series
         continue-on-error: true
