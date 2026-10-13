@@ -55,6 +55,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 8
         run: python noaa_vertical_probe.py
+
+      - name: Assemble unified smoke forecast
+        continue-on-error: true
+        run: python merge_smoke_forecast.py
         
       - name: Commit updated JSON
         run: |
