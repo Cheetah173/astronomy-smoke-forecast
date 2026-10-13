@@ -107,7 +107,7 @@ def extract():
         started = time.monotonic()
         response = session.get(file_url, headers={"Range": f"bytes={start}-{end}"}, timeout=90)
         response.raise_for_status()
-               download_seconds = time.monotonic() - started
+        download_seconds = time.monotonic() - started
         if response.status_code != 206 or len(response.content) != length or not response.content.startswith(b"GRIB"):
             raise ValueError(f"HTTP partial content failed for {key}: status={response.status_code}, bytes={len(response.content)}, wanted={length}")
         with tempfile.TemporaryFile(mode="w+b") as tmp:
