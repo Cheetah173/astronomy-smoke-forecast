@@ -8,11 +8,11 @@ Does not modify the existing hourly smoke-column or Open-Meteo products.
 """
 from __future__ import annotations
 
-import time
 import json
 import math
 import re
 import tempfile
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -78,7 +78,13 @@ def interp(a0, a1, target):
 
 
 def extract():
-    from eccodes import codes_get, codes_grib_find_nearest_multiple, codes_grib_new_from_file, codes_release
+    from eccodes import (
+        codes_get,
+        codes_get_double_elements,
+        codes_grib_find_nearest_multiple,
+        codes_grib_new_from_file,
+        codes_release,
+    )
 
     now = datetime.now(timezone.utc)
     cycle, _ = select_cycle(now)
@@ -100,12 +106,10 @@ def extract():
         status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=frozenset(["GET"]),
     )
-    session.mount(
-        "https://",
-        HTTPAdapter(max_retries=retry_policy)
-    )
+    session.mount("https://", HTTPAdapter(max_retries=retry_policy))
     session.headers["User-Agent"] = "AstronomySmokeForecast/0.5 (research profile diagnostic)"
     cache = {}
+    grid_reference = {"signature": None, "indices": None}
     stats = {"downloaded_messages": 0, "bytes": 0}
 
     def fetch(e):
@@ -134,18 +138,41 @@ def extract():
                 ft = int(codes_get(gid, "forecastTime"))
                 if gd != int(cycle.strftime("%Y%m%d")) or gh != int(cycle.strftime("%H%M")) or ft != lead:
                     raise ValueError(f"Unexpected metadata date/time/hour for {key}")
-                nearest = codes_grib_find_nearest_multiple(
-                    gid,
-                    False,
-                    [lat for _, lat, _ in POINTS],
-                    [lon for _, _, lon in POINTS]
-                )
-                if len(nearest) != len(POINTS):
-                    raise ValueError("Incomplete regional grid lookup")
+                grid_signature = str(codes_get(gid, "md5GridSection"))
+                if not grid_signature or grid_signature in ("missing", "undef"):
+                    raise ValueError("GRIB field has no usable grid signature")
+
+                if grid_reference["signature"] is None:
+                    nearest = codes_grib_find_nearest_multiple(
+                        gid,
+                        False,
+                        [lat for _, lat, _ in POINTS],
+                        [lon for _, _, lon in POINTS],
+                    )
+                    if len(nearest) != len(POINTS):
+                        raise ValueError("Incomplete regional grid lookup")
+                    indices = [int(point.index) for point in nearest]
+                    # Verify zero-based element indices match the initially
+                    # located geographic points before caching them.
+                    sampled = codes_get_double_elements(gid, "values", indices)
+                    for point, sample in zip(nearest, sampled):
+                        if not math.isclose(float(point.value), float(sample),
+                                            rel_tol=1e-7, abs_tol=1e-12):
+                            raise ValueError("Grid-element indexing failed validation")
+                    grid_reference["signature"] = grid_signature
+                    grid_reference["indices"] = indices
+                    raw_values = sampled
+                    print("Grid indexes cached and verified", flush=True)
+                else:
+                    if grid_reference["signature"] != grid_signature:
+                        raise ValueError("GRIB grid geometry changed between fields")
+                    raw_values = codes_get_double_elements(
+                        gid, "values", grid_reference["indices"]
+                    )
 
                 values = {}
-                for (label, _, _), closest in zip(POINTS, nearest):
-                    v = float(closest.value)
+                for (label, _, _), value in zip(POINTS, raw_values):
+                    v = float(value)
                     if not math.isfinite(v):
                         raise ValueError(f"Non-finite {key} for {label}")
                     values[label] = v
@@ -154,14 +181,12 @@ def extract():
         cache[key] = values
         stats["downloaded_messages"] += 1
         stats["bytes"] += length
-        
         print(
             f"{e['name']} level {e['level']}: "
             f"download={download_seconds:.1f}s, "
             f"total={time.monotonic()-started:.1f}s",
-            flush=True
+            flush=True,
         )
-
         return values
 
     try:
