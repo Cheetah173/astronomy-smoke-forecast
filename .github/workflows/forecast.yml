@@ -51,6 +51,11 @@ jobs:
         continue-on-error: true
         run: python noaa_vertical_inventory.py
         
+      - name: Extract NOAA vertical smoke profile
+        continue-on-error: true
+        timeout-minutes: 8
+        run: python noaa_vertical_probe.py
+        
       - name: Commit updated JSON
         run: |
           git config user.name "github-actions[bot]"
