@@ -22,7 +22,7 @@ from noaa_probe import POINTS, select_cycle
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "docs" / "noaa_vertical_probe.json"
 URL_PREFIX = "https://noaa-hrrr-bdp-pds.s3.amazonaws.com"
-COARSE = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+COARSE = [4, 5, 6, 11, 12]
 TARGETS = {"smoke_1000ft_agl_ug_m3": 304.8,
            "smoke_6000ft_agl_ug_m3": 1828.8}
 MAX_INDEX = 250_000
