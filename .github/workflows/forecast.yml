@@ -46,7 +46,11 @@ jobs:
       - name: Extract NOAA smoke time series
         continue-on-error: true
         run: python noaa_timeseries.py
-
+        
+      - name: Inspect NOAA vertical levels
+        continue-on-error: true
+        run: python noaa_vertical_inventory.py
+        
       - name: Commit updated JSON
         run: |
           git config user.name "github-actions[bot]"
