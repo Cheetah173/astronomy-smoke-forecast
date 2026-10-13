@@ -78,7 +78,7 @@ def interp(a0, a1, target):
 
 
 def extract():
-    from eccodes import codes_get, codes_grib_find_nearest, codes_grib_new_from_file, codes_release
+    from eccodes import codes_get, codes_grib_find_nearest_multiple, codes_grib_new_from_file, codes_release
 
     now = datetime.now(timezone.utc)
     cycle, _ = select_cycle(now)
@@ -134,10 +134,18 @@ def extract():
                 ft = int(codes_get(gid, "forecastTime"))
                 if gd != int(cycle.strftime("%Y%m%d")) or gh != int(cycle.strftime("%H%M")) or ft != lead:
                     raise ValueError(f"Unexpected metadata date/time/hour for {key}")
+                nearest = codes_grib_find_nearest_multiple(
+                    gid,
+                    False,
+                    [lat for _, lat, _ in POINTS],
+                    [lon for _, _, lon in POINTS]
+                )
+                if len(nearest) != len(POINTS):
+                    raise ValueError("Incomplete regional grid lookup")
+
                 values = {}
-                for label, lat, lon in POINTS:
-                    closest = codes_grib_find_nearest(gid, lat, lon)[0]
-                    v = float(getattr(closest, "value"))
+                for (label, _, _), closest in zip(POINTS, nearest):
+                    v = float(closest.value)
                     if not math.isfinite(v):
                         raise ValueError(f"Non-finite {key} for {label}")
                     values[label] = v
