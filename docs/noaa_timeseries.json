@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_utc": "2026-11-08T08:10:24.305703Z",
+  "generated_utc": "2026-11-08T13:56:44.249416Z",
   "timezone": "America/Chicago",
   "location": {
     "name": "Robinson TX approximate",
@@ -9,7 +9,7 @@
   },
   "source": "NOAA NCEP HRRR CONUS NOMADS filtered GRIB2",
   "source_url": "https://nomads.ncep.noaa.gov/cgi-bin/filter_hrrr_2d.pl",
-  "model_cycle_utc": "2026-11-08T00:00:00Z",
+  "model_cycle_utc": "2026-11-08T06:00:00Z",
   "measurement_status": {
     "smoke_column_mg_m2": "NOAA HRRR COLMD - see each sample status",
     "aerosol_optical_depth": "NOAA HRRR AOTK - wavelength unverified",
@@ -25,659 +25,659 @@
   ],
   "samples": [
     {
-      "valid_utc": "2026-11-08T02:00:00Z",
-      "valid_local": "2026-11-07T20:00:00-06:00",
-      "forecast_hour": 2,
+      "valid_utc": "2026-11-09T02:00:00Z",
+      "valid_local": "2026-11-08T20:00:00-06:00",
+      "forecast_hour": 20,
       "status": "available",
-      "smoke_column_mg_m2": 2.372,
-      "hrrr_aod": 0.01057,
+      "smoke_column_mg_m2": 0.83,
+      "hrrr_aod": 0.0037,
       "region": [
         {
           "label": "NW",
           "latitude": 32.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 1.078,
-          "hrrr_aod": 0.00481
+          "smoke_column_mg_m2": 0.86,
+          "hrrr_aod": 0.00384
         },
         {
           "label": "N",
           "latitude": 32.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 2.268,
-          "hrrr_aod": 0.01013
+          "smoke_column_mg_m2": 1.1,
+          "hrrr_aod": 0.00492
         },
         {
           "label": "NE",
           "latitude": 32.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 3.18,
-          "hrrr_aod": 0.01421
+          "smoke_column_mg_m2": 1.28,
+          "hrrr_aod": 0.00572
         },
         {
           "label": "W",
           "latitude": 31.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 1.6,
-          "hrrr_aod": 0.00714
+          "smoke_column_mg_m2": 0.32,
+          "hrrr_aod": 0.00142
         },
         {
           "label": "SITE",
           "latitude": 31.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 2.372,
-          "hrrr_aod": 0.01057
+          "smoke_column_mg_m2": 0.83,
+          "hrrr_aod": 0.0037
         },
         {
           "label": "E",
           "latitude": 31.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 3.81,
-          "hrrr_aod": 0.01694
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 1.828,
-          "hrrr_aod": 0.00811
-        },
-        {
-          "label": "S",
-          "latitude": 30.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.978,
-          "hrrr_aod": 0.01328
-        },
-        {
-          "label": "SE",
-          "latitude": 30.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.166,
-          "hrrr_aod": 0.00966
-        }
-      ]
-    },
-    {
-      "valid_utc": "2026-11-08T03:00:00Z",
-      "valid_local": "2026-11-07T21:00:00-06:00",
-      "forecast_hour": 3,
-      "status": "available",
-      "smoke_column_mg_m2": 2.17,
-      "hrrr_aod": 0.00967,
-      "region": [
-        {
-          "label": "NW",
-          "latitude": 32.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 1.188,
-          "hrrr_aod": 0.00531
-        },
-        {
-          "label": "N",
-          "latitude": 32.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.344,
-          "hrrr_aod": 0.00599
-        },
-        {
-          "label": "NE",
-          "latitude": 32.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.21,
-          "hrrr_aod": 0.00987
-        },
-        {
-          "label": "W",
-          "latitude": 31.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 1.456,
-          "hrrr_aod": 0.0065
-        },
-        {
-          "label": "SITE",
-          "latitude": 31.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.17,
-          "hrrr_aod": 0.00967
-        },
-        {
-          "label": "E",
-          "latitude": 31.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 3.374,
-          "hrrr_aod": 0.01497
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 1.352,
-          "hrrr_aod": 0.00601
-        },
-        {
-          "label": "S",
-          "latitude": 30.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.916,
-          "hrrr_aod": 0.013
-        },
-        {
-          "label": "SE",
-          "latitude": 30.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.156,
-          "hrrr_aod": 0.0096
-        }
-      ]
-    },
-    {
-      "valid_utc": "2026-11-08T04:00:00Z",
-      "valid_local": "2026-11-07T22:00:00-06:00",
-      "forecast_hour": 4,
-      "status": "available",
-      "smoke_column_mg_m2": 1.832,
-      "hrrr_aod": 0.00817,
-      "region": [
-        {
-          "label": "NW",
-          "latitude": 32.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.922,
-          "hrrr_aod": 0.00412
-        },
-        {
-          "label": "N",
-          "latitude": 32.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.412,
-          "hrrr_aod": 0.00629
-        },
-        {
-          "label": "NE",
-          "latitude": 32.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 1.472,
-          "hrrr_aod": 0.00657
-        },
-        {
-          "label": "W",
-          "latitude": 31.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.782,
-          "hrrr_aod": 0.00347
-        },
-        {
-          "label": "SITE",
-          "latitude": 31.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.832,
-          "hrrr_aod": 0.00817
-        },
-        {
-          "label": "E",
-          "latitude": 31.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.956,
-          "hrrr_aod": 0.01314
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.678,
-          "hrrr_aod": 0.0031
-        },
-        {
-          "label": "S",
-          "latitude": 30.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.214,
-          "hrrr_aod": 0.00985
-        },
-        {
-          "label": "SE",
-          "latitude": 30.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.508,
-          "hrrr_aod": 0.01118
-        }
-      ]
-    },
-    {
-      "valid_utc": "2026-11-08T05:00:00Z",
-      "valid_local": "2026-11-07T23:00:00-06:00",
-      "forecast_hour": 5,
-      "status": "available",
-      "smoke_column_mg_m2": 1.794,
-      "hrrr_aod": 0.008,
-      "region": [
-        {
-          "label": "NW",
-          "latitude": 32.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.606,
-          "hrrr_aod": 0.00271
-        },
-        {
-          "label": "N",
-          "latitude": 32.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.694,
-          "hrrr_aod": 0.00755
-        },
-        {
-          "label": "NE",
-          "latitude": 32.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 1.9,
-          "hrrr_aod": 0.00848
-        },
-        {
-          "label": "W",
-          "latitude": 31.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.416,
-          "hrrr_aod": 0.00186
-        },
-        {
-          "label": "SITE",
-          "latitude": 31.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.794,
-          "hrrr_aod": 0.008
-        },
-        {
-          "label": "E",
-          "latitude": 31.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.796,
-          "hrrr_aod": 0.01244
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.95,
-          "hrrr_aod": 0.00422
-        },
-        {
-          "label": "S",
-          "latitude": 30.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.186,
-          "hrrr_aod": 0.00973
-        },
-        {
-          "label": "SE",
-          "latitude": 30.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.47,
-          "hrrr_aod": 0.011
-        }
-      ]
-    },
-    {
-      "valid_utc": "2026-11-08T06:00:00Z",
-      "valid_local": "2026-11-08T00:00:00-06:00",
-      "forecast_hour": 6,
-      "status": "available",
-      "smoke_column_mg_m2": 0.727,
-      "hrrr_aod": 0.00326,
-      "region": [
-        {
-          "label": "NW",
-          "latitude": 32.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.755,
-          "hrrr_aod": 0.00337
-        },
-        {
-          "label": "N",
-          "latitude": 32.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 1.39,
-          "hrrr_aod": 0.00619
-        },
-        {
-          "label": "NE",
-          "latitude": 32.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 1.815,
-          "hrrr_aod": 0.00808
-        },
-        {
-          "label": "W",
-          "latitude": 31.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.333,
-          "hrrr_aod": 0.00148
-        },
-        {
-          "label": "SITE",
-          "latitude": 31.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 0.727,
-          "hrrr_aod": 0.00326
-        },
-        {
-          "label": "E",
-          "latitude": 31.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.734,
-          "hrrr_aod": 0.01217
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.635,
-          "hrrr_aod": 0.00282
-        },
-        {
-          "label": "S",
-          "latitude": 30.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 2.58,
-          "hrrr_aod": 0.01148
-        },
-        {
-          "label": "SE",
-          "latitude": 30.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.805,
-          "hrrr_aod": 0.0125
-        }
-      ]
-    },
-    {
-      "valid_utc": "2026-11-08T07:00:00Z",
-      "valid_local": "2026-11-08T01:00:00-06:00",
-      "forecast_hour": 7,
-      "status": "available",
-      "smoke_column_mg_m2": 0.613,
-      "hrrr_aod": 0.00274,
-      "region": [
-        {
-          "label": "NW",
-          "latitude": 32.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.74,
-          "hrrr_aod": 0.00329
-        },
-        {
-          "label": "N",
-          "latitude": 32.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 0.957,
-          "hrrr_aod": 0.00425
-        },
-        {
-          "label": "NE",
-          "latitude": 32.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 1.875,
-          "hrrr_aod": 0.00835
-        },
-        {
-          "label": "W",
-          "latitude": 31.45,
-          "longitude": -98.34,
-          "smoke_column_mg_m2": 0.217,
-          "hrrr_aod": 0.00096
-        },
-        {
-          "label": "SITE",
-          "latitude": 31.45,
-          "longitude": -97.14,
-          "smoke_column_mg_m2": 0.613,
-          "hrrr_aod": 0.00274
-        },
-        {
-          "label": "E",
-          "latitude": 31.45,
-          "longitude": -95.94,
-          "smoke_column_mg_m2": 2.72,
-          "hrrr_aod": 0.01214
-        },
-        {
-          "label": "SW",
-          "latitude": 30.45,
-          "longitude": -98.34,
           "smoke_column_mg_m2": 0.97,
           "hrrr_aod": 0.00434
         },
         {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.42,
+          "hrrr_aod": 0.00188
+        },
+        {
           "label": "S",
           "latitude": 30.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 2.545,
-          "hrrr_aod": 0.01133
+          "smoke_column_mg_m2": 0.52,
+          "hrrr_aod": 0.0023
         },
         {
           "label": "SE",
           "latitude": 30.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 2.775,
-          "hrrr_aod": 0.01238
+          "smoke_column_mg_m2": 2.4,
+          "hrrr_aod": 0.01058
         }
       ]
     },
     {
-      "valid_utc": "2026-11-08T08:00:00Z",
-      "valid_local": "2026-11-08T02:00:00-06:00",
-      "forecast_hour": 8,
+      "valid_utc": "2026-11-09T03:00:00Z",
+      "valid_local": "2026-11-08T21:00:00-06:00",
+      "forecast_hour": 21,
       "status": "available",
-      "smoke_column_mg_m2": 0.7,
-      "hrrr_aod": 0.00312,
+      "smoke_column_mg_m2": 0.65,
+      "hrrr_aod": 0.00288,
       "region": [
         {
           "label": "NW",
           "latitude": 32.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.748,
-          "hrrr_aod": 0.00333
+          "smoke_column_mg_m2": 0.87,
+          "hrrr_aod": 0.00386
         },
         {
           "label": "N",
           "latitude": 32.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 1.125,
-          "hrrr_aod": 0.005
+          "smoke_column_mg_m2": 1.17,
+          "hrrr_aod": 0.00522
         },
         {
           "label": "NE",
           "latitude": 32.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 1.705,
-          "hrrr_aod": 0.00759
+          "smoke_column_mg_m2": 1.26,
+          "hrrr_aod": 0.00562
         },
         {
           "label": "W",
           "latitude": 31.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.221,
-          "hrrr_aod": 0.00098
+          "smoke_column_mg_m2": 0.36,
+          "hrrr_aod": 0.0016
         },
         {
           "label": "SITE",
           "latitude": 31.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 0.7,
-          "hrrr_aod": 0.00312
+          "smoke_column_mg_m2": 0.65,
+          "hrrr_aod": 0.00288
         },
         {
           "label": "E",
           "latitude": 31.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 3.489,
-          "hrrr_aod": 0.01565
+          "smoke_column_mg_m2": 1.3,
+          "hrrr_aod": 0.00582
         },
         {
           "label": "SW",
           "latitude": 30.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.332,
-          "hrrr_aod": 0.00147
+          "smoke_column_mg_m2": 0.34,
+          "hrrr_aod": 0.00152
         },
         {
           "label": "S",
           "latitude": 30.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 2.422,
-          "hrrr_aod": 0.01078
+          "smoke_column_mg_m2": 0.58,
+          "hrrr_aod": 0.00254
         },
         {
           "label": "SE",
           "latitude": 30.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 2.308,
-          "hrrr_aod": 0.01029
+          "smoke_column_mg_m2": 2.49,
+          "hrrr_aod": 0.01102
         }
       ]
     },
     {
-      "valid_utc": "2026-11-08T09:00:00Z",
-      "valid_local": "2026-11-08T03:00:00-06:00",
-      "forecast_hour": 9,
+      "valid_utc": "2026-11-09T04:00:00Z",
+      "valid_local": "2026-11-08T22:00:00-06:00",
+      "forecast_hour": 22,
       "status": "available",
-      "smoke_column_mg_m2": 0.553,
-      "hrrr_aod": 0.00247,
+      "smoke_column_mg_m2": 0.57,
+      "hrrr_aod": 0.00254,
       "region": [
         {
           "label": "NW",
           "latitude": 32.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.587,
-          "hrrr_aod": 0.00261
+          "smoke_column_mg_m2": 0.84,
+          "hrrr_aod": 0.00374
         },
         {
           "label": "N",
           "latitude": 32.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 0.738,
-          "hrrr_aod": 0.00328
+          "smoke_column_mg_m2": 1.16,
+          "hrrr_aod": 0.00516
         },
         {
           "label": "NE",
           "latitude": 32.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 0.688,
-          "hrrr_aod": 0.00304
+          "smoke_column_mg_m2": 1.08,
+          "hrrr_aod": 0.00482
         },
         {
           "label": "W",
           "latitude": 31.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.067,
-          "hrrr_aod": 0.00029
+          "smoke_column_mg_m2": 0.38,
+          "hrrr_aod": 0.0017
         },
         {
           "label": "SITE",
           "latitude": 31.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 0.553,
+          "smoke_column_mg_m2": 0.57,
+          "hrrr_aod": 0.00254
+        },
+        {
+          "label": "E",
+          "latitude": 31.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.03,
+          "hrrr_aod": 0.00458
+        },
+        {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.24,
+          "hrrr_aod": 0.00106
+        },
+        {
+          "label": "S",
+          "latitude": 30.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.24,
+          "hrrr_aod": 0.00546
+        },
+        {
+          "label": "SE",
+          "latitude": 30.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.81,
+          "hrrr_aod": 0.00804
+        }
+      ]
+    },
+    {
+      "valid_utc": "2026-11-09T05:00:00Z",
+      "valid_local": "2026-11-08T23:00:00-06:00",
+      "forecast_hour": 23,
+      "status": "available",
+      "smoke_column_mg_m2": 0.72,
+      "hrrr_aod": 0.00318,
+      "region": [
+        {
+          "label": "NW",
+          "latitude": 32.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.79,
+          "hrrr_aod": 0.00352
+        },
+        {
+          "label": "N",
+          "latitude": 32.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.25,
+          "hrrr_aod": 0.00556
+        },
+        {
+          "label": "NE",
+          "latitude": 32.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.2,
+          "hrrr_aod": 0.00534
+        },
+        {
+          "label": "W",
+          "latitude": 31.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.27,
+          "hrrr_aod": 0.00118
+        },
+        {
+          "label": "SITE",
+          "latitude": 31.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.72,
+          "hrrr_aod": 0.00318
+        },
+        {
+          "label": "E",
+          "latitude": 31.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 0.89,
+          "hrrr_aod": 0.00396
+        },
+        {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.29,
+          "hrrr_aod": 0.00128
+        },
+        {
+          "label": "S",
+          "latitude": 30.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.47,
+          "hrrr_aod": 0.00648
+        },
+        {
+          "label": "SE",
+          "latitude": 30.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.55,
+          "hrrr_aod": 0.00686
+        }
+      ]
+    },
+    {
+      "valid_utc": "2026-11-09T06:00:00Z",
+      "valid_local": "2026-11-09T00:00:00-06:00",
+      "forecast_hour": 24,
+      "status": "available",
+      "smoke_column_mg_m2": 0.66,
+      "hrrr_aod": 0.00293,
+      "region": [
+        {
+          "label": "NW",
+          "latitude": 32.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.7,
+          "hrrr_aod": 0.0031
+        },
+        {
+          "label": "N",
+          "latitude": 32.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.23,
+          "hrrr_aod": 0.0055
+        },
+        {
+          "label": "NE",
+          "latitude": 32.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.25,
+          "hrrr_aod": 0.00561
+        },
+        {
+          "label": "W",
+          "latitude": 31.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.18,
+          "hrrr_aod": 0.00078
+        },
+        {
+          "label": "SITE",
+          "latitude": 31.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.66,
+          "hrrr_aod": 0.00293
+        },
+        {
+          "label": "E",
+          "latitude": 31.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 0.78,
+          "hrrr_aod": 0.00349
+        },
+        {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.41,
+          "hrrr_aod": 0.00184
+        },
+        {
+          "label": "S",
+          "latitude": 30.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.26,
+          "hrrr_aod": 0.0056
+        },
+        {
+          "label": "SE",
+          "latitude": 30.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.64,
+          "hrrr_aod": 0.00728
+        }
+      ]
+    },
+    {
+      "valid_utc": "2026-11-09T07:00:00Z",
+      "valid_local": "2026-11-09T01:00:00-06:00",
+      "forecast_hour": 25,
+      "status": "available",
+      "smoke_column_mg_m2": 0.72,
+      "hrrr_aod": 0.00319,
+      "region": [
+        {
+          "label": "NW",
+          "latitude": 32.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.73,
+          "hrrr_aod": 0.00326
+        },
+        {
+          "label": "N",
+          "latitude": 32.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.11,
+          "hrrr_aod": 0.00495
+        },
+        {
+          "label": "NE",
+          "latitude": 32.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.13,
+          "hrrr_aod": 0.00503
+        },
+        {
+          "label": "W",
+          "latitude": 31.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.32,
+          "hrrr_aod": 0.00144
+        },
+        {
+          "label": "SITE",
+          "latitude": 31.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.72,
+          "hrrr_aod": 0.00319
+        },
+        {
+          "label": "E",
+          "latitude": 31.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 0.78,
+          "hrrr_aod": 0.00345
+        },
+        {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.52,
+          "hrrr_aod": 0.00233
+        },
+        {
+          "label": "S",
+          "latitude": 30.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.01,
+          "hrrr_aod": 0.00446
+        },
+        {
+          "label": "SE",
+          "latitude": 30.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.57,
+          "hrrr_aod": 0.00699
+        }
+      ]
+    },
+    {
+      "valid_utc": "2026-11-09T08:00:00Z",
+      "valid_local": "2026-11-09T02:00:00-06:00",
+      "forecast_hour": 26,
+      "status": "available",
+      "smoke_column_mg_m2": 0.69,
+      "hrrr_aod": 0.00306,
+      "region": [
+        {
+          "label": "NW",
+          "latitude": 32.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.75,
+          "hrrr_aod": 0.00336
+        },
+        {
+          "label": "N",
+          "latitude": 32.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.99,
+          "hrrr_aod": 0.00442
+        },
+        {
+          "label": "NE",
+          "latitude": 32.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.14,
+          "hrrr_aod": 0.0051
+        },
+        {
+          "label": "W",
+          "latitude": 31.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.52,
+          "hrrr_aod": 0.00231
+        },
+        {
+          "label": "SITE",
+          "latitude": 31.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.69,
+          "hrrr_aod": 0.00306
+        },
+        {
+          "label": "E",
+          "latitude": 31.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 0.71,
+          "hrrr_aod": 0.00317
+        },
+        {
+          "label": "SW",
+          "latitude": 30.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.54,
+          "hrrr_aod": 0.00241
+        },
+        {
+          "label": "S",
+          "latitude": 30.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.87,
+          "hrrr_aod": 0.00386
+        },
+        {
+          "label": "SE",
+          "latitude": 30.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.38,
+          "hrrr_aod": 0.00615
+        }
+      ]
+    },
+    {
+      "valid_utc": "2026-11-09T09:00:00Z",
+      "valid_local": "2026-11-09T03:00:00-06:00",
+      "forecast_hour": 27,
+      "status": "available",
+      "smoke_column_mg_m2": 0.72,
+      "hrrr_aod": 0.00318,
+      "region": [
+        {
+          "label": "NW",
+          "latitude": 32.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.72,
+          "hrrr_aod": 0.0032
+        },
+        {
+          "label": "N",
+          "latitude": 32.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 1.0,
+          "hrrr_aod": 0.00447
+        },
+        {
+          "label": "NE",
+          "latitude": 32.45,
+          "longitude": -95.94,
+          "smoke_column_mg_m2": 1.22,
+          "hrrr_aod": 0.00542
+        },
+        {
+          "label": "W",
+          "latitude": 31.45,
+          "longitude": -98.34,
+          "smoke_column_mg_m2": 0.55,
           "hrrr_aod": 0.00247
         },
         {
+          "label": "SITE",
+          "latitude": 31.45,
+          "longitude": -97.14,
+          "smoke_column_mg_m2": 0.72,
+          "hrrr_aod": 0.00318
+        },
+        {
           "label": "E",
           "latitude": 31.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 2.891,
-          "hrrr_aod": 0.01292
+          "smoke_column_mg_m2": 0.76,
+          "hrrr_aod": 0.00338
         },
         {
           "label": "SW",
           "latitude": 30.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 1.345,
-          "hrrr_aod": 0.006
+          "smoke_column_mg_m2": 0.5,
+          "hrrr_aod": 0.00221
         },
         {
           "label": "S",
           "latitude": 30.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 2.963,
-          "hrrr_aod": 0.01318
+          "smoke_column_mg_m2": 0.69,
+          "hrrr_aod": 0.00308
         },
         {
           "label": "SE",
           "latitude": 30.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 2.091,
-          "hrrr_aod": 0.00931
+          "smoke_column_mg_m2": 1.17,
+          "hrrr_aod": 0.0052
         }
       ]
     },
     {
-      "valid_utc": "2026-11-08T10:00:00Z",
-      "valid_local": "2026-11-08T04:00:00-06:00",
-      "forecast_hour": 10,
+      "valid_utc": "2026-11-09T10:00:00Z",
+      "valid_local": "2026-11-09T04:00:00-06:00",
+      "forecast_hour": 28,
       "status": "available",
-      "smoke_column_mg_m2": 0.451,
-      "hrrr_aod": 0.00201,
+      "smoke_column_mg_m2": 0.682,
+      "hrrr_aod": 0.00303,
       "region": [
         {
           "label": "NW",
           "latitude": 32.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.63,
-          "hrrr_aod": 0.00281
+          "smoke_column_mg_m2": 0.786,
+          "hrrr_aod": 0.0035
         },
         {
           "label": "N",
           "latitude": 32.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 0.579,
-          "hrrr_aod": 0.00257
+          "smoke_column_mg_m2": 1.036,
+          "hrrr_aod": 0.00463
         },
         {
           "label": "NE",
           "latitude": 32.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 0.55,
-          "hrrr_aod": 0.00243
+          "smoke_column_mg_m2": 1.226,
+          "hrrr_aod": 0.00546
         },
         {
           "label": "W",
           "latitude": 31.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 0.023,
-          "hrrr_aod": 0.0001
+          "smoke_column_mg_m2": 0.614,
+          "hrrr_aod": 0.00274
         },
         {
           "label": "SITE",
           "latitude": 31.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 0.451,
-          "hrrr_aod": 0.00201
+          "smoke_column_mg_m2": 0.682,
+          "hrrr_aod": 0.00303
         },
         {
           "label": "E",
           "latitude": 31.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 2.207,
-          "hrrr_aod": 0.00985
+          "smoke_column_mg_m2": 0.826,
+          "hrrr_aod": 0.00367
         },
         {
           "label": "SW",
           "latitude": 30.45,
           "longitude": -98.34,
-          "smoke_column_mg_m2": 1.886,
-          "hrrr_aod": 0.00841
+          "smoke_column_mg_m2": 0.442,
+          "hrrr_aod": 0.00197
         },
         {
           "label": "S",
           "latitude": 30.45,
           "longitude": -97.14,
-          "smoke_column_mg_m2": 3.287,
-          "hrrr_aod": 0.01464
+          "smoke_column_mg_m2": 0.69,
+          "hrrr_aod": 0.00307
         },
         {
           "label": "SE",
           "latitude": 30.45,
           "longitude": -95.94,
-          "smoke_column_mg_m2": 3.191,
-          "hrrr_aod": 0.014
+          "smoke_column_mg_m2": 1.096,
+          "hrrr_aod": 0.00488
         }
       ]
     }
